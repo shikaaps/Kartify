@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kartify - Register</title>
-    <link rel="stylesheet" href="http://localhost:81/kartify/style.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         function toggleContact() {
             var useEmail = document.getElementById("useEmail").checked;
@@ -76,11 +76,11 @@
     <header id="header">
         <table>
             <tr>
-                <td><img src="http://localhost:81/kartify/Logo.png" alt="Kartify Logo"></td>
+                <td><img src="Logo.png" alt="Kartify Logo"></td>
                 <td>
                     <nav>
-                        <a href="http://localhost:81/kartify/index.html">Home</a>
-                        <a href="http://localhost:81/kartify/login.php">Login</a>
+                        <a href="index.html">Home</a>
+                        <a href="login.php">Login</a>
                     </nav>
                 </td>
             </tr>
@@ -91,7 +91,7 @@
         <h1>Create Your Kartify Account</h1>
         <p>Join millions of happy shoppers today!</p>
 
-        <form name="regfrm" id="regfrm" action="http://localhost:81/kartify/registerhandler.php" method="post">
+        <form name="regfrm" id="regfrm" action="registerhandler.php" method="post">
             <table>
                 <tr><th colspan="2">Register</th></tr>
                 <tr><td><label for="n">Name</label></td><td><input type="text" name="n" id="n"></td></tr>
@@ -123,7 +123,7 @@
                 <?php if (isset($_GET['msg'])) { echo htmlspecialchars($_GET['msg']); } ?>
             </div>
         </form>
-        <p>Already have an account? <a href="http://localhost:81/kartify/login.php">Login here</a></p>
+        <p>Already have an account? <a href="login.php">Login here</a></p>
     </main>
     <footer id="footer"><p>@Kartify 2025 — Shop Smart, Live Better</p></footer>
 </body>

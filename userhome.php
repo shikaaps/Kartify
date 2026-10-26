@@ -23,19 +23,19 @@ $cart_count = $conn->query("SELECT SUM(quantity) as total FROM cart WHERE user_i
 <head>
     <meta charset="UTF-8">
     <title>Kartify Store</title>
-    <link rel="stylesheet" href="http://localhost:81/kartify/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header">
         <table width="100%">
             <tr>
-                <td><img src="http://localhost:81/kartify/Logo.png" alt="Kartify"></td>
+                <td><img src="Logo.png" alt="Kartify"></td>
                 <td>
                     <nav>
-                        <a href="http://localhost:81/kartify/cart.php">Cart (<?= $cart_count ?>)</a>
-                        <a href="http://localhost:81/kartify/profile.php">Profile</a>
-                        <?php if($is_admin): ?> <a href="http://localhost:81/kartify/admin.php" class="admin-link">Admin Panel</a> <?php endif; ?>
-                        <a href="http://localhost:81/kartify/logout.php">Logout</a>
+                        <a href="cart.php">Cart (<?= $cart_count ?>)</a>
+                        <a href="profile.php">Profile</a>
+                        <?php if($is_admin): ?> <a href="admin.php" class="admin-link">Admin Panel</a> <?php endif; ?>
+                        <a href="logout.php">Logout</a>
                     </nav>
                 </td>
             </tr>
@@ -49,7 +49,7 @@ $cart_count = $conn->query("SELECT SUM(quantity) as total FROM cart WHERE user_i
             <input type="number" name="min_price" placeholder="Min ₹" value="<?= htmlspecialchars($min_price) ?>">
             <input type="number" name="max_price" placeholder="Max ₹" value="<?= htmlspecialchars($max_price) ?>">
             <button type="submit">Search</button>
-            <a href="http://localhost:81/kartify/userhome.php" style="padding: 10px; color: #2874f0; font-weight:bold;">Clear</a>
+            <a href="userhome.php" style="padding: 10px; color: #2874f0; font-weight:bold;">Clear</a>
         </form>
 
         <div class="grid">
@@ -58,7 +58,7 @@ $cart_count = $conn->query("SELECT SUM(quantity) as total FROM cart WHERE user_i
                     <img src="<?= htmlspecialchars($row['image_url']) ?>" alt="Product">
                     <h3><?= htmlspecialchars($row['name']) ?></h3>
                     <p class="price">₹<?= number_format($row['price'], 2) ?></p>
-                    <form action="http://localhost:81/kartify/add_to_cart.php" method="POST">
+                    <form action="add_to_cart.php" method="POST">
                         <input type="hidden" name="product_id" value="<?= $row['id'] ?>">
                         <button type="submit">Add to Cart</button>
                     </form>

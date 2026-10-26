@@ -7,7 +7,7 @@ $u = isset($_GET['n']) ? trim($_GET['n']) : '';
 $p = isset($_GET['p']) ? $_GET['p'] : '';
 
 if ($u === '' || $p === '') {
-    header("Location:http://localhost:81/kartify/login.php?msg=" . urlencode("Please fill in all fields."));
+    header("Location:login.php?msg=" . urlencode("Please fill in all fields."));
     exit;
 }
 
@@ -23,10 +23,10 @@ if ($row && password_verify($p, $row['password'])) {
     $_SESSION["ssname"] = $row["name"];
     $_SESSION["ssuser"] = $row["username"];
     $_SESSION["is_admin"] = $row["is_admin"];
-    header("Location:http://localhost:81/kartify/userhome.php");
+    header("Location:userhome.php");
     exit;
 } else {
-    header("Location:http://localhost:81/kartify/login.php?msg=" . urlencode("invalid credentials"));
+    header("Location:login.php?msg=" . urlencode("invalid credentials"));
     exit;
 }
 ?>

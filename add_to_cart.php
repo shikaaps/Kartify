@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["ssno"])) { header("Location:http://localhost:81/kartify/login.php"); exit; }
+if (!isset($_SESSION["ssno"])) { header("Location:login.php"); exit; }
 $conn = new mysqli("localhost", "root", "", "kartify");
 $user = $_SESSION["ssno"];
 $prod = $_POST['product_id'];
@@ -11,5 +11,5 @@ if($check->num_rows > 0) {
 } else {
     $conn->query("INSERT INTO cart (user_id, product_id) VALUES ($user, $prod)");
 }
-header("Location:http://localhost:81/kartify/userhome.php");
+header("Location:userhome.php");
 ?>

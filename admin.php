@@ -18,20 +18,20 @@ if(isset($_POST['add_product'])) {
 if(isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $conn->query("DELETE FROM products WHERE id=$id");
-    header("Location:http://localhost:81/kartify/admin.php"); exit;
+    header("Location:admin.php"); exit;
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="http://localhost:81/kartify/style.css">
+    <link rel="stylesheet" href=style.css">
 </head>
 <body>
     <header id="header">
         <table width="100%">
             <tr>
-                <td><a href="http://localhost:81/kartify/userhome.php" style="color:white;">&larr; Back to Shop</a></td>
+                <td><a href=userhome.php" style="color:white;">&larr; Back to Shop</a></td>
                 <td style="text-align:right; color:yellow; font-weight:bold;">ADMIN MODE</td>
             </tr>
         </table>
@@ -57,7 +57,7 @@ if(isset($_GET['delete'])) {
                     <td>{$row['id']}</td>
                     <td>{$row['name']}</td>
                     <td>₹{$row['price']}</td>
-                    <td><a href='http://localhost:81/kartify/admin.php?delete={$row['id']}' class='btn-danger'>Delete</a></td>
+                    <td><a href='admin.php?delete={$row['id']}' class='btn-danger'>Delete</a></td>
                 </tr>";
             }
             ?>

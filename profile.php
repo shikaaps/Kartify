@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["ssno"])) { header("Location:http://localhost:81/kartify/login.php"); exit; }
+if (!isset($_SESSION["ssno"])) { header("Location:login.php"); exit; }
 $conn = new mysqli("localhost", "root", "", "kartify");
 $user = $_SESSION["ssno"];
 
@@ -19,14 +19,14 @@ $userData = $conn->query("SELECT * FROM users WHERE id=$user")->fetch_assoc();
 <html>
 <head>
     <title>My Profile</title>
-    <link rel="stylesheet" href="http://localhost:81/kartify/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header">
         <table width="100%">
             <tr>
-                <td><a href="http://localhost:81/kartify/userhome.php" style="color:white;">&larr; Back to Shop</a></td>
-                <td style="text-align:right;"><a href="http://localhost:81/kartify/logout.php" style="color:white;">Logout</a></td>
+                <td><a href="userhome.php" style="color:white;">&larr; Back to Shop</a></td>
+                <td style="text-align:right;"><a href="logout.php" style="color:white;">Logout</a></td>
             </tr>
         </table>
     </header>
