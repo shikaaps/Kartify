@@ -9,6 +9,10 @@ if(isset($_POST['add_product'])) {
     $price = $_POST['price'];
     $img = $_POST['img'];
     $conn->query("INSERT INTO products (name, description, price, image_url) VALUES ('$name', '$desc', $price, '$img')");
+    
+    // Add this line to redirect and prevent the popup!
+    header("Location:admin.php"); 
+    exit;
 }
 
 if(isset($_GET['delete'])) {
